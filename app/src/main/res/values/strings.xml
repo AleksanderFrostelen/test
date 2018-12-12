@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name"></string>
+
+    <!-- Title -->
+    <string name="add_property">Lägg till en bostad</string>
+    <!-- Main Screen -->
+    <string name="title">Visningsguiden</string>
+    <string name="middle_description">Varmt välkommen till Boolis visningsguide. Med denna guide hoppas vi att du ska få
+        ut all nödvändig information när du går på visning.
+    </string>
+    <string name="bottom_description">Kom ihåg att vara envis och ställa en massa frågor till mäklaren. Att köpa bostad
+        är en stor affär.
+    </string>
+    <string name="get_started_button">Sätt igång!</string>
+    <string name="property_address">Var ligger bostagen?</string>
+    <string name="property_size">Hur stor är den?</string>
+    <string name="living_area_format">Antal m2</string>
+    <string name="rooms_format">Antal rum</string>
+    <string name="hint_address">Adress</string>
+    <string name="storage_option">Finns det ett förråd som tillhör lägenheten?</string>
+    <string name="give_property_name">Vill du ge bostaden ett namn?</string>
+    <string name="property_name">Namn/beskrivning</string>
+    <string name="done">Klar</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_check_list">CheckListActivity</string>
+    <string name="title_activity_room">RoomActivity</string>
+    <string name="title_activity_property_model">PropertyModel</string>
+    <string name="title_activity_user_data">UserData</string>
+
+
+</resources>

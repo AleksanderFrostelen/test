@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tools:LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        tools:context=".property.room.RoomActivity">
+
+    <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+    >
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+
+
+        >
+            <TextView
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:gravity="center|start"
+                    android:layout_marginTop="4dp"
+                    android:singleLine="false"
+                    android:layout_marginEnd="46dp"
+
+
+            />
+
+            <CheckBox
+                    android:id="@+id/questionCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="4dp"
+                    android:scaleX="2.0"
+                    android:scaleY="2.0"
+                    android:layout_alignParentEnd="true"
+                    android:buttonTint="@color/colorPrimary"
+
+
+            />
+
+        </RelativeLayout>
+
+        <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+        >
+
+            <EditText
+                    android:id="@+id/userNotesText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Anteckningar"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="14sp"
+                    android:gravity="center|start"
+                    android:background="@color/divider_color"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="text"
+
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            android:background="@color/divider_color"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+
+    />
+
+</tools:LinearLayout>
