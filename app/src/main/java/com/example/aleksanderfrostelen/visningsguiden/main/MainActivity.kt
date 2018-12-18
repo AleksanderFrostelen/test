@@ -5,14 +5,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import com.example.aleksanderfrostelen.visningsguiden.R
+import com.example.aleksanderfrostelen.visningsguiden.data.PropertyManager
+import com.example.aleksanderfrostelen.visningsguiden.data.PropertyRepository
 import com.example.aleksanderfrostelen.visningsguiden.property.PropertyActivity
 import com.example.aleksanderfrostelen.visningsguiden.property.PropertyListActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PropertyListActivity::class.java)
             startActivity(intent)
         }
+
+        PropertyRepository.setup(this)
+        PropertyManager.getProperties()
     }
 
 

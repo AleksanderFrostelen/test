@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.aleksanderfrostelen.visningsguiden.R
 import com.example.aleksanderfrostelen.visningsguiden.data.PropertyManager
+import com.example.aleksanderfrostelen.visningsguiden.data.PropertyRepository
 import kotlinx.android.synthetic.main.activity_check_list.*
 import kotlinx.android.synthetic.main.content_check_list.*
 import kotlinx.android.synthetic.main.question_view.*
@@ -28,6 +29,8 @@ class RoomListActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+        PropertyRepository.setup(this)
         setContentView(R.layout.activity_check_list)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

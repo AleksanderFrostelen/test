@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.example.aleksanderfrostelen.visningsguiden.R
 import com.example.aleksanderfrostelen.visningsguiden.data.Property
 import com.example.aleksanderfrostelen.visningsguiden.data.PropertyManager
+import com.example.aleksanderfrostelen.visningsguiden.data.PropertyRepository
 import kotlinx.android.synthetic.main.activity_property.*
 import kotlinx.android.synthetic.main.content_property.*
 
@@ -18,6 +19,8 @@ class PropertyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_property)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        PropertyRepository.setup(this)
 
         readyButton.setOnClickListener {
             var hasErrors = false

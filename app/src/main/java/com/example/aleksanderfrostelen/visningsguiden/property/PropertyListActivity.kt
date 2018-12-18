@@ -7,17 +7,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.example.aleksanderfrostelen.visningsguiden.R
 import com.example.aleksanderfrostelen.visningsguiden.data.PropertyManager
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.example.aleksanderfrostelen.visningsguiden.data.PropertyRepository
 import kotlinx.android.synthetic.main.activity_property_list.*
 
-class PropertyListActivity : AppCompatActivity(), OnMapReadyCallback {
+class PropertyListActivity : AppCompatActivity() {
 
-    private lateinit var mMap: GoogleMap
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
@@ -26,6 +20,8 @@ class PropertyListActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_property_list)
+
+        PropertyRepository.setup(this)
 
 
         viewManager = LinearLayoutManager(this)
@@ -46,17 +42,5 @@ class PropertyListActivity : AppCompatActivity(), OnMapReadyCallback {
             adapter = viewAdapter
 
         }
-    }
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-        mMap.uiSettings.setAllGesturesEnabled(false)
-
-        val midsommar = LatLng(59.301142, 18.010749)
-
-        mMap.addMarker(MarkerOptions().position(midsommar).title("Marker in Candyland"))
-
-        val cameraUpdate = CameraUpdateFactory.newLatLngZoom(midsommar, 16.0F)
-        mMap.moveCamera(cameraUpdate)
     }
 }
