@@ -71,15 +71,6 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.example.aleksanderfrostelen.visningsguiden.main.MainActivity"/>
         </activity>
-        <activity
-                android:name=".property.room.UserData"
-                android:label="@string/title_activity_user_data"
-                android:parentActivityName=".property.room.RoomListActivity"
-                android:theme="@style/AppTheme">
-            <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.aleksanderfrostelen.visningsguiden.property.room.RoomListActivity"/>
-        </activity>
     </application>
 
 </manifest>
