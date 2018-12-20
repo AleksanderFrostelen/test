@@ -8,12 +8,17 @@ import com.example.aleksanderfrostelen.visningsguiden.util.TinyDB
 object PropertyManager {
     private var properties = mutableListOf<Property>()
 
+
     fun addProperty(property: Property) {
+
+        if (properties.contains(property)) return
         properties.add(property)
+
         PropertyRepository.save(property)
     }
 
     fun fetchProperties(): List<Property>{
+
         if (properties.isEmpty()) getProperties()
         return properties
     }
@@ -24,10 +29,11 @@ object PropertyManager {
     }
 
     fun getProperties() {
+
         properties = PropertyRepository.loadProperties()
     }
-
 }
+
 
 
 

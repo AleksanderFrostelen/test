@@ -21,12 +21,11 @@ class PropertyListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_property_list)
 
+
         PropertyRepository.setup(this)
 
-
         viewManager = LinearLayoutManager(this)
-        viewAdapter =
-                PropertyAdapter(PropertyManager.fetchProperties())
+        viewAdapter = PropertyAdapter(PropertyManager.fetchProperties())
 
 
         addProperty.setOnClickListener {
@@ -43,4 +42,8 @@ class PropertyListActivity : AppCompatActivity() {
 
         }
     }
+
+
+
+
 }

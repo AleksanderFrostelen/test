@@ -1,6 +1,7 @@
 package com.example.aleksanderfrostelen.visningsguiden.property
 
 import android.content.Intent
+import android.content.res.Resources
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import android.view.ViewGroup
 import com.example.aleksanderfrostelen.visningsguiden.R
 import com.example.aleksanderfrostelen.visningsguiden.data.Property
 import com.example.aleksanderfrostelen.visningsguiden.property.room.RoomListActivity
+import com.example.aleksanderfrostelen.visningsguiden.util.toFormattedNumber
+import kotlinx.android.synthetic.main.content_property.view.*
 import kotlinx.android.synthetic.main.property_view.view.*
 
 class PropertyAdapter(private val contents: List<Property>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -17,7 +20,10 @@ class PropertyAdapter(private val contents: List<Property>) : RecyclerView.Adapt
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.property_view, parent, false) as View
 
+
         return PropertyViewHolder(view)
+
+
 
     }
 
@@ -33,12 +39,15 @@ class PropertyAdapter(private val contents: List<Property>) : RecyclerView.Adapt
                 val intent = Intent(view.context, RoomListActivity::class.java)
                 intent.putExtra("PropertyID", this.adapterPosition)
                 startActivity(view.context, intent, null)
+                cost
             }
         }
 
         private val address = view.address
         private val area = view.area
         private val rooms = view.room
+        private val cost = view.cost
+        private val description = view.description
 
 
         init {
@@ -49,10 +58,21 @@ class PropertyAdapter(private val contents: List<Property>) : RecyclerView.Adapt
             address.setText(savedProperty.address)
             area.setText(savedProperty.livingArea.toString())
             rooms.setText(savedProperty.rooms.toString())
+            description.setText(savedProperty.description)
 
+            savedProperty.let {
+                cost.text = anyPrice(it.cost, resources)
+            }
         }
 
+        private fun anyPrice(price: Int, resources: Resources): String{
+            price.let {
+                return resources.getString(R.string.property_cost, it.toFormattedNumber())
+            }
+        }
     }
+
+
 
     override fun getItemCount() = contents.size
 

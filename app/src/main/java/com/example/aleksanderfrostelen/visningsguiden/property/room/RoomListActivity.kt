@@ -52,6 +52,7 @@ class RoomListActivity : AppCompatActivity(), View.OnClickListener {
             roomCount.text = property.rooms.toString()
             propertySize.text = property.livingArea.toString()
 
+
             viewManager = LinearLayoutManager(this)
             viewAdapter = RoomAdapter(
                 property.listOfRooms,

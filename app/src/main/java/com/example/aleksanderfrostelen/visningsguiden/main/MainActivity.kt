@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         PropertyRepository.setup(this)
         PropertyManager.getProperties()
+
+
     }
 
 

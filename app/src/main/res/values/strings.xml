@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Visningsguiden</string>
 
     <!-- Title -->
     <string name="add_property">Lägg till en bostad</string>
@@ -25,7 +25,9 @@
     <string name="title_activity_check_list">CheckListActivity</string>
     <string name="title_activity_room">RoomActivity</string>
     <string name="title_activity_property_model">PropertyModel</string>
-    <string name="title_activity_user_data">UserData</string>
+    <string name="property_rooms">%s rum</string>
+    <string name="property_area"> %s m²</string>
+    <string name="property_cost">%s kr</string>
 
 
 </resources>

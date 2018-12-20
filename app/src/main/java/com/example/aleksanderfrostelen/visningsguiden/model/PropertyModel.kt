@@ -26,10 +26,12 @@ class PropertyModel : AppCompatActivity(), View.OnClickListener {
             val room = propertyRoom.text
             val size = propertySqm.text.toString().toInt()
             val description = propertyDescription.text
+            val cost = propertyCost.text.toString().toInt()
             intent.putExtra("", address)
             intent.putExtra("", room)
             intent.putExtra("", size)
             intent.putExtra("", description)
+            intent.putExtra("", cost)
 
             startActivity(intent)
         }
@@ -37,10 +39,6 @@ class PropertyModel : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun searchAddress(location: Location) {
-        val propertyAddress = LatLng(location.latitude, location.longitude)
-
-    }
 
     override fun onClick(view: View?){
         view?.let {

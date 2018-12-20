@@ -5,7 +5,8 @@ data class Property(
     val livingArea: Int,
     val rooms: Int,
     val storage: Boolean,
-    val description: String?
+    val description: String?,
+    val cost: Int
 ) {
     val listOfRooms = mutableListOf<Room>()
 

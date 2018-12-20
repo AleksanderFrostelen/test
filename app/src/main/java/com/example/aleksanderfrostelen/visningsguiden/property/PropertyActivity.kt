@@ -1,12 +1,14 @@
 package com.example.aleksanderfrostelen.visningsguiden.property
 
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.aleksanderfrostelen.visningsguiden.R
 import com.example.aleksanderfrostelen.visningsguiden.data.Property
 import com.example.aleksanderfrostelen.visningsguiden.data.PropertyManager
 import com.example.aleksanderfrostelen.visningsguiden.data.PropertyRepository
+import com.example.aleksanderfrostelen.visningsguiden.util.toFormattedNumber
 import kotlinx.android.synthetic.main.activity_property.*
 import kotlinx.android.synthetic.main.content_property.*
 
@@ -19,6 +21,8 @@ class PropertyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_property)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
 
         PropertyRepository.setup(this)
 
@@ -40,16 +44,21 @@ class PropertyActivity : AppCompatActivity() {
                 propertyRoom.error = "Please give a room"
                 hasErrors = true
             }
+            if(propertyCost.text.isEmpty()){
+                propertyCost.error = "Please give a cost"
+                hasErrors = true
+            }
 
             if (!hasErrors) {
 
-                // 1. Create a property model
                 val property = Property(
                     propertyAddress.text.toString(),
                     propertySqm.text.toString().toInt(),
                     propertyRoom.text.toString().toInt(),
                     storageYes.isChecked,
-                    propertyDescription.text.toString()
+                    propertyDescription.text.toString(),
+                    propertyCost.text.toString().toInt()
+
                 )
 
                 PropertyManager.addProperty(property)

@@ -1,202 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background_color"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".property.PropertyActivity"
-        tools:showIn="@layout/activity_property">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".property.PropertyActivity"
+    tools:showIn="@layout/activity_property">
 
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
             <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/property_address" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/propertyAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/divider_color"
+                    android:gravity="center|start"
+                    android:hint="@string/hint_address"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center|start"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/property_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/propertySqm"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/divider_color"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="@string/living_area_format"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/propertyRoom"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/divider_color"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="@string/rooms_format"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
 
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="start"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:text="@string/property_address"/>
+                    android:text="Vad kostar den?" />
 
-            <RelativeLayout
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true">
+                    >
 
-                <EditText
-                        android:id="@+id/propertyAddress"
+
+                    <EditText
+                        android:id="@+id/propertyCost"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:background="@color/divider_color"
-                        android:gravity="center|start"
-                        android:hint="@string/hint_address"
-                        android:inputType="text"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textSize="14sp"/>
-            </RelativeLayout>
-
-
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center|start"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="@string/property_size"/>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:orientation="horizontal">
-
-                <EditText
-                        android:id="@+id/propertySqm"
-                        android:layout_width="100dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_weight="1"
-                        android:background="@color/divider_color"
                         android:clickable="true"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         android:gravity="center|start"
-                        android:hint="@string/living_area_format"
+                        android:hint="Pris"
                         android:inputType="number"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
-                <EditText
-                        android:id="@+id/propertyRoom"
-                        android:layout_width="100dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_weight="1"
-                        android:background="@color/divider_color"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:gravity="center|start"
-                        android:hint="@string/rooms_format"
-                        android:inputType="number"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textSize="14sp"/>
+                </RelativeLayout>
+
             </LinearLayout>
 
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="15dp"
-                    android:gravity="start"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="@string/storage_option"/>
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/storage_option" />
 
 
             <RadioGroup
-                    android:layout_width="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/storageYes"
+                    android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                <RadioButton
-                        android:id="@+id/storageYes"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:gravity="center_vertical"
-                        android:textAlignment="center"/>
+                    android:gravity="center_vertical"
+                    android:textAlignment="center" />
 
                 <TextView
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="15dp"
-                        android:text="Ja"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Ja" />
 
                 <RadioButton
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:gravity="center_vertical"
-                        android:textAlignment="center"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
 
-                />
+                    />
 
                 <TextView
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:text="Nej"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Nej" />
 
             </RadioGroup>
 
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="start"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="@string/give_property_name"/>
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/give_property_name" />
 
             <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
 
                 <EditText
-                        android:id="@+id/propertyDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:background="@color/divider_color"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:gravity="center|start"
-                        android:hint="@string/property_name"
-                        android:inputType="text"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textSize="14sp"/>
+                    android:id="@+id/propertyDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/divider_color"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="@string/property_name"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="14sp" />
 
             </RelativeLayout>
 
+
             <Button
-                    android:id="@+id/readyButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/primary_button_selector"
-                    android:text="@string/done"
-                    android:textColor="@drawable/primary_button_text_selector"
-                    android:theme="@style/Button.NoCaps"
-                    app:layout_constraintBottom_toBottomOf="parent"
-            />
+                android:id="@+id/readyButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/primary_button_selector"
+                android:text="@string/done"
+                android:textColor="@drawable/primary_button_text_selector"
+                android:theme="@style/Button.NoCaps"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </LinearLayout>
 
